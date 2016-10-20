@@ -50,80 +50,24 @@
           <hr class="marginbot-50">
         </div>
       </div>
+
       <div class="row">
+
+        <% catalog.images.order(:position).each do |image| %>
+
         <div class="col-xs-6 col-sm-3 col-md-3">
           <div class="wow bounceInUp" data-wow-delay="0.2s">
             <div class="team boxed-grey">
               <div class="inner">
-                <div class="avatar"><img src="img/mini01.jpg" alt="boxer" class="img-responsive" /></div>
+                <div class="avatar"><img src="<%= image.file_url %>" alt="boxer" class="img-responsive" /></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.5s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini03.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.8s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini02.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="1s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini06.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.2s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini05.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.5s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini08.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="0.8s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini07.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3">
-          <div class="wow bounceInUp" data-wow-delay="1s">
-            <div class="team boxed-grey">
-              <div class="inner">
-                <div class="avatar"><img src="img/mini04.jpg" alt="boxer" class="img-responsive" /></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>		
+
+        <% end %>
+
+      </div>
     </div>
 
 

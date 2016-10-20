@@ -1,3 +1,4 @@
 class CatalogImage < ApplicationRecord
-  belongs_to :catalog, inverse_of: :catalog_images
+  belongs_to :catalog, inverse_of: :images
+  mount_uploader :file, CatalogImageUploader
 end

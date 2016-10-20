@@ -8,6 +8,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'devise'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug', platform: :mri
