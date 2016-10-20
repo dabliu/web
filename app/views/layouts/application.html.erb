@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dabliu</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <div id="preloader">
+      <div id="load"></div>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/">
+            <h1>D<span style="color:red;">a</span>bliu</h1>
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#intro">Home</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Boxers", catalog_path(:boxers) %></li>
+                <li><%= link_to "Slips", catalog_path(:slips) %></li>
+              </ul>
+            </li>
+
+            <li><a href="https://underweardabliu.wordpress.com/" target="_blank">Blog</a></li>
+            <li><a href="#venta">Puntos De Venta</a></li>
+            <li><a href="#venta">Tienda</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <div class="wow shake" data-wow-delay="0.4s">
+              <div class="page-scroll marginbot-30">
+                <a href="#intro" id="totop" class="btn btn-circle">
+                  <i class="fa fa-angle-double-up animated"></i>
+                </a>
+              </div>
+            </div>
+            <p>&copy;Copyright 2015 - Dabliu</p>
+
+          </div>
+        </div>	
+      </div>
+    </footer>
+
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>
