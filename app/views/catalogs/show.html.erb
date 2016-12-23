@@ -15,12 +15,16 @@
   </div>
 
   <div id="big" class= "center">
-    <img src="<%= images.first.file_url %>" width="130" />
+    <%= render 'catalogs/items/thumb', item: items.first, width: 130 %>
   </div>
   <div style="margin-top:10px;" id="miniaturas">
-    <% images[1..-1].each do |image| %>
-      <img src="<%= image.file_url %>" width="130" />
-    <% end %>
+    <%=
+      render(
+        partial: 'catalogs/items/thumb',
+        collection: items[1..-1],
+        as: :item, locals: {width: 130}
+      )
+    %>
   </div>
 </div>
 

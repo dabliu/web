@@ -3,11 +3,15 @@ ActiveAdmin.register Catalog do
 
   form do |f|
     f.inputs do
-      f.input :name
-
-      f.has_many :images do |imgf|
-        imgf.input :file, as: :file
-        imgf.input :position, as: :number, input_html: { value: imgf.index }
+      f.has_many :items do |itf|
+        itf.input :position, as: :number, input_html: { value: itf.index }
+        itf.input :type, as: :select,
+          collection: {
+            'Imágen': 'Catalog::Item::Image',
+            'Video': 'Catalog::Item::YoutubeVideo'
+          }
+        itf.input :file, as: :file, hint: 'Requerido para ítem de tipo "Imágen"'
+        itf.input :youtube_video_id, hint: 'Requerido para ítem de tipo "Video"'
       end
     end
 
@@ -17,16 +21,23 @@ ActiveAdmin.register Catalog do
   show do
     attributes_table do
       row :name
-      row :images do
-        resource.images.each_slice(4).map do |images|
-          images.map do |img|
-            image_tag(img.file_url,
-              style: 'float: left; display: inline-block; width: 25%')
+      row :items do
+        resource.items.each_slice(4).map do |items|
+          items.map do |item|
+            style = 'float: left; display: inline-block; width: 25%'
+
+            case item
+            when Catalog::Item::Image
+              image_tag(item.file_url, style: style)
+            when Catalog::Item::YoutubeVideo
+              preview_src = "https://img.youtube.com/vi/#{item.youtube_video_id}/0.jpg"
+              image_tag(preview_src, style: style)
+            end
           end.join.html_safe
         end.join.html_safe
       end
     end
   end
 
-  permit_params images_attributes: [:id, :file, :_destroy, :position]
+  permit_params items_attributes: [:id, :type, :file, :youtube_video_id, :_destroy, :position]
 end

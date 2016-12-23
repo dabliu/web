@@ -1,7 +1,7 @@
 class CatalogsController < ApplicationController
   def show
     catalog = Catalog.find_by_name params.fetch(:id)
-    images = catalog.images.order(:position)
-    render :show, locals: { images: images }
+    items = catalog.items.order(:position)
+    render :show, locals: { items: items }
   end
 end

@@ -1,0 +1,19 @@
+es:
+  attributes:
+    created_at: Fecha de creación
+    updated_at: Fecha de actualización
+    current_sign_in_at: Fecha de ultimo login
+    sign_in_count: Cantidad total de logins
+    name: Nombre
+    position: Posición
+    type: Tipo
+    file: Archivo
+    youtube_video_id: ID de video Youtube
+  activerecord:
+    models:
+      catalog:
+        one: Catálogo
+        other: Catálogos
+      user:
+        one: Usuario
+        other: Usuarios

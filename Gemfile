@@ -10,6 +10,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
 gem 'carrierwave'
+gem 'rails-i18n'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

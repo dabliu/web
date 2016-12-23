@@ -53,13 +53,23 @@
 
       <div class="row">
 
-        <% catalog.images.order(:position).each do |image| %>
+        <% catalog.items.order(:position).each do |item| %>
 
         <div class="col-xs-6 col-sm-3 col-md-3">
           <div class="wow bounceInUp" data-wow-delay="0.2s">
             <div class="team boxed-grey">
               <div class="inner">
-                <div class="avatar"><img src="<%= image.file_url %>" alt="boxer" class="img-responsive" /></div>
+                <div class='avatar'>
+                  <%=
+                    render(
+                      partial: 'catalogs/items/thumb',
+                      locals: {
+                        item: item,
+                        image_class: 'img-responsive'
+                      }
+                    )
+                  %>
+                </div>
               </div>
             </div>
           </div>

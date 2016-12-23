@@ -1,4 +1,10 @@
 class Catalog < ApplicationRecord
-  has_many :images, class_name: "CatalogImage", inverse_of: :catalog
-  accepts_nested_attributes_for :images, allow_destroy: true
+  attr_readonly :name
+
+  has_many :items,
+    class_name: "Catalog::Item",
+    inverse_of: :catalog
+
+  accepts_nested_attributes_for :items,
+    allow_destroy: true
 end
