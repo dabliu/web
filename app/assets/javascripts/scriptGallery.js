@@ -1,5 +1,5 @@
 $(function() {
-  var div_miniaturas = document.getElementById('miniaturas');
+  var div_miniaturas = $('#miniaturas');
   var fotos = div_miniaturas.getElementsByTagName('img');
 
   for (var i = 0; i< fotos.length; i++) {

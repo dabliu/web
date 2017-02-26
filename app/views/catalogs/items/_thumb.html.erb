@@ -2,10 +2,7 @@
 <% when Catalog::Item::Image %>
   <img src="<%= item.file_url %>" width='<%= local_assigns[:width] %>' class='<%= local_assigns[:image_class] %>'/>
 <% when Catalog::Item::YoutubeVideo %>
-  <iframe
-    src="https://www.youtube.com/embed/<%= item.youtube_video_id %>"
-    frameborder="0"
-    allowfullscreen
-    width='<%= local_assigns[:width] %>'
-  ></iframe>
+  <a href='https://www.youtube.com/watch?v=<%= item.youtube_video_id %>' target='_blank'>
+    <img src="https://img.youtube.com/vi/<%= item.youtube_video_id %>/0.jpg" style='width: 100%;'/>
+  </a>
 <% end %>
