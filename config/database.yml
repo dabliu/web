@@ -1,9 +1,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['DATABASE_USERNAME'] || 'postgres' %>
-  password: <%= ENV['DATABASE_PASSWORD'] || 'postgres' %>
+  pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host:     <%= ENV["DATABASE_HOST"] || "localhost" %>
+  port:     <%= ENV["DATABASE_PORT"] || 5432 %>
+  username: <%= ENV["DATABASE_USER"] || "postgres" %>
+  password: <%= ENV["DATABASE_PASSWORD"] || "postgres" %>
+  database: <%= ENV["DATABASE_NAME"] || "dabliu_development" %>
 
 development:
   <<: *default
@@ -15,4 +18,3 @@ test:
 
 production:
   <<: *default
-  database: dabliu_production

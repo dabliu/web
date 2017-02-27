@@ -12,6 +12,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rails-i18n'
 gem 'pry-rails'
+gem 'json', '~> 2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
