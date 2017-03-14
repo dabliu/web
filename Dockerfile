@@ -11,3 +11,6 @@ COPY Gemfile* $APP_ROOT/
 RUN bundle install
 
 COPY . $APP_ROOT
+
+RUN ln -sfn /dev/stdout log/production.log
+RUN ln -sfn /dev/stdout log/staging.log
