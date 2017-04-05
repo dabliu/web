@@ -14,3 +14,5 @@ COPY . $APP_ROOT
 
 RUN ln -sfn /dev/stdout log/production.log
 RUN ln -sfn /dev/stdout log/staging.log
+
+CMD "./scripts/run_server.sh"
